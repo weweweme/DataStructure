@@ -19,22 +19,12 @@ class CustomStack<T> : IEnumerable
         CustomArrayCopy(_container, 0, newContainer, 0, _size);
         _container = newContainer;
     }
-    
+
     private void CustomArrayCopy(T[] sourceContainer, int sourceIndex, T[] destinationContainer, int destinationIndex, int length)
     {
-        if (sourceIndex < destinationIndex)
+        for (int i = 0; i < length; ++i)
         {
-            for (int i = length - 1; i >= 0; --i)
-            {
-                destinationContainer[destinationIndex + i] = sourceContainer[sourceIndex + i];
-            }
-        }
-        else
-        {
-            for (int i = 0; i < length; ++i)
-            {
-                destinationContainer[destinationIndex + i] = sourceContainer[sourceIndex + i];
-            }
+            destinationContainer[destinationIndex + i] = sourceContainer[sourceIndex + i];
         }
     }
 
